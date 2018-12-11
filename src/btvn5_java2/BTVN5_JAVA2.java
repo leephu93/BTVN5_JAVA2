@@ -194,6 +194,41 @@ public class BTVN5_JAVA2 {
             System.out.println("MARK OF STUDENT: " + item.getMark());
             System.out.println("**********************");
         }
+        System.out.print("FIND FOLLOW MARK: ");
+        float mark = scanner.nextFloat();
+        System.out.println("RESULT: ");
+        for (STUDENT item : ar_students) {
+            if (item.getMark() >= mark) {
+                System.out.println("FULLNAME OF STUDENT: " + item.getName());
+                System.out.println("NAMECLASS OF STUDENT: " + item.getName_class());
+                System.out.println("MARK OF STUDENT: " + item.getMark());
+                System.out.println("**********************");
+            }
+        }
+        STUDENT std1 = new STUDENT();
+        for (STUDENT item : ar_students){
+            if(item.getMark() > std1.getMark()){
+                std1.setName(item.getName());
+                std1.setName_class(item.getName_class());
+                std1.setMark(item.getMark());
+            }
+        }
+        System.out.println("THE STUDENT HAS A MAX MARK !");
+        System.out.println("FULLNAME OF STUDENT: " + std1.getName());
+        System.out.println("NAMECLASS OF STUDENT: " + std1.getName_class());
+        System.out.println("MARK OF STUDENT: " + std1.getMark());
+        STUDENT std2 = (STUDENT) ar_students.get(0);
+        for (STUDENT item : ar_students){
+            if(item.getMark() < std2.getMark()){
+                std2.setName(item.getName());
+                std2.setName_class(item.getName_class());
+                std2.setMark(item.getMark());
+            }
+        }
+        System.out.println("THE STUDENT HAS A MIN MARK !");
+        System.out.println("FULLNAME OF STUDENT: " + std2.getName());
+        System.out.println("NAMECLASS OF STUDENT: " + std2.getName_class());
+        System.out.println("MARK OF STUDENT: " + std2.getMark());
     }
 
     public static void main(String[] args) throws IOException {

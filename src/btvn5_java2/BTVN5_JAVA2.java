@@ -10,6 +10,7 @@ import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
@@ -171,11 +172,36 @@ public class BTVN5_JAVA2 {
         }
     }
 
+    public static void C7() throws FileNotFoundException, IOException {
+        ArrayList<STUDENT> ar_students = new ArrayList<>();
+        File f = new File("E:\\JAVA\\JAVA2\\BTVN5_JAVA2\\src\\files\\file9.txt");
+        try (FileReader fr = new FileReader(f); LineNumberReader lines = new LineNumberReader(fr)) {
+            String line = "";
+            while ((line = lines.readLine()) != null) {
+//                System.out.println(line);
+                String[] term = line.split("@");
+                STUDENT std = new STUDENT();
+                std.setName(term[0]);
+                std.setName_class(term[1]);
+                std.setMark(Float.parseFloat(term[2]));
+                ar_students.add(std);
+            }
+//            System.out.println(lines.getLineNumber());
+        }
+        for (STUDENT item : ar_students) {
+            System.out.println("FULLNAME OF STUDENT: " + item.getName());
+            System.out.println("NAMECLASS OF STUDENT: " + item.getName_class());
+            System.out.println("MARK OF STUDENT: " + item.getMark());
+            System.out.println("**********************");
+        }
+    }
+
     public static void main(String[] args) throws IOException {
 //        C123();
 //        C4();
 //        C5();
-        C6();
+//        C6();
+        C7();
     }
 
 }

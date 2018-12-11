@@ -1,0 +1,78 @@
+,
+                    { loader: 'font-awesome-loader' }
+
+
+            {
+                test: /\.(ttf|eot|svg)(\?[\s\S]+)?$/,
+                use: 'file-loader'
+            }
+
+
+      loaders: [{
+        test: /\.css$/,
+        loader: 'style!css?sourceMap'
+      }, {
+        test: /\.woff(\?v=\d+\.\d+\.\d+)?$/,
+        loader: "url?limit=10000&mimetype=application/font-woff"
+      }, {
+        test: /\.woff2(\?v=\d+\.\d+\.\d+)?$/,
+        loader: "url?limit=10000&mimetype=application/font-woff"
+      }, {
+        test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,
+        loader: "url?limit=10000&mimetype=application/octet-stream"
+      }, {
+        test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
+        loader: "file"
+      }, {
+        test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
+        loader: "url?limit=10000&mimetype=image/svg+xml"
+      }]
+
+
+module: {
+        rules: [
+            {
+                use: 'babel-loader',
+                test: /\.js$/,
+                exclude: '/node_modules/'
+            },
+            {
+                test: /\.css$/,
+                use: ['style-loader', 'css-loader']
+            },
+            {
+                test: /\.jpg$|\.gif$|\.png$|\.svg$|\.woff$|\.woff2$|\.eot$|\.ttf$|\.wav$|\.mp3$|\.ico$|\.img$/,
+                use: 'file-loader'
+            }
+        ]
+    },
+
+test: /\.jpg$|\.gif$|\.png$|\.svg$|\.woff$|\.woff2$|\.eot$|\.ttf$|\.wav$|\.mp3$|\.ico$|\.img$/,
+
+
+plugin: [
+        new HtmlWebpackPlugin({
+            options: {
+                template: 'src/index.html'
+            }
+        })
+    ],
+
+{fullname:"LVP",Age:26}
+
+
+$2a$10$aFYRKh4HmUhtzNW2VkzQn.ah8ICFhhLmo2amfI28LbcollpOXYMxC
+$2a$10$W05d8GFUz189hDKRN/v/d.VCNEScRQIJK9vBIgodtwrqmiRIAtK1u
+
+*API Google
+Here is your client ID: 476381393650-9i6rsn2jsqo07nckfsergdavar0j6qao.apps.googleusercontent.com
+Here is your client secret: X-gj4qEUtNZcoIf1oToHO2Td
+
+postgres://bhfizjrcpkaykk:3abdf9b908d883a9fe2e8c238e769234d5fec44f184bc15a19fd946334f036b0@ec2-54-83-38-174.compute-1.amazonaws.com:5432/dabbk31ptl63g
+
+ else if (x % 2 == 0 && term2 % 2 != 0) {
+                for (int j = term1 - 1; j >= term3; j--) {
+                    term4++;
+                    ar1[term4 - 1] = ar[j];
+                }
+            } 

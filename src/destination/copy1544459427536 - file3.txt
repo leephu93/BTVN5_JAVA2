@@ -1,0 +1,71 @@
+Send form parameters via sockets to data service from web service
+
+I have created a chat application through sockets, and I now want to send form parameters that i have retrieved from a form through the web service to the data service. At the moment the chat application has two sides, which are client and server. I believe the client side would now be the web service, and the data service would be the server side. I do not know how to adapt the chat application into my code in order to send the parameters over. I want to be able to basically adapt the chatclient.java application code so that it lets me send the form parameters from HouseWS.Java over instead of the chat messages. Below is my code for the client and server side of the chat application, followed by the servlet code which retrieves the form parameters that i want to send:
+
+Khai báo Redux: var redux = require('redux');
+Khai báo Reducer: var reducer = (truyền vào đối tượng state hiện tại, hành động Action) => { return state hiện tại};
+Khởi tạo Store: var store = redux.createStore(reducer vừa khai báo ở trên);
+Lấy giá trị của state: store.getState();
+Gọi hành động thực thi Action: store.dispatch({type:"Nhập tên của hành động muốn thực thi"})
+Hàm Subcribe trong redux (Theo dõi State thay đổi): store.subscribe(() => {console.log(store.getState());})
+
+    var oldstate = {
+      ar:["Chuột","Bàn phím","Màn hình"],
+      status:true
+    }
+    var redux = require('redux');
+    var reducer = (state=oldstate,action) => {
+      switch (action.type) {
+        case "CHANGE_STATUS":
+          return {...state,status:!state.status}
+
+        case "ADD_NEW":
+          return {...state,ar:[...state.ar,action.newITEM]}
+
+        case "DEL_NEW":
+          return {...state,ar:state.ar.filter((val,key) => key !== action.index)}
+
+        default:
+          return state;
+      }
+    };
+    var store = redux.createStore(reducer);
+    // console.log(store.getState());
+    store.dispatch({
+      type:"CHANGE_STATUS"
+    });
+    // console.log(store.getState());
+    store.dispatch({
+      type:"ADD_NEW",
+      newITEM:"Tai nghe"
+    })
+    // console.log(store.getState());
+    store.dispatch({
+      type:"DEL_NEW",
+      index:0
+    })
+    // console.log(store.getState());
+    store.subscribe(() => {
+      console.log(store.getState());
+    })
+
+/////////////////TOÁN TỬ 3 CHẤM/////////////////
+  bacham1 = () => {
+    var ar1 = ["1","2","3","4"];
+    var ar2 = [...ar1];
+    ar2[0]="100";
+    return "Array 1: "+ar1+" / Array 2: "+ar2
+    
+  };
+
+  bacham2 = () => {
+    var obj1 = {
+      ar:[200,99,69],
+      status:true
+    };
+    // var obj2 = {...obj1,status:false,ar:[69,55,1000]}
+    var obj3 = {...obj1,ar:[...obj1.ar,1001]}
+    return obj3
+  };
+
+ XXX 
